@@ -19,7 +19,7 @@ zeitaufwand = "1 Aktion"
 
 [[zauber]]
 name = "Alarm"
-schule = "Bann"
+schule = "Bannmagie"
 grad = 1
 ritual = true
 zeitaufwand = "1 Minute"
@@ -59,7 +59,7 @@ beschreibung = [
 
 [[zauber]]
 name = "Antimagisches Feld"
-schule = "Bann"
+schule = "Bannmagie"
 grad = 8
 zeitaufwand = "1 Aktion"
 reichweite = "Selbst (Sphäre von 3m Radius)"
@@ -121,7 +121,7 @@ beschreibung = [
 
 [[zauber]]
 name = "Arkanes Schloss"
-schule = "Bann"
+schule = "Bannmagie"
 grad = 2
 zeitaufwand = "1 Aktion"
 reichweite = "Berührung"
@@ -181,4 +181,23 @@ klassen = []
 beschreibung = [
   "Du berufst dich auf die Macht Hadars, des Dunklen Hungers. Tentakel aus finsterer Energie brechen aus dir hervor und schlagen auf alle Kreaturen innerhalb von 3m ein. Jede Kreatur in diesem Bereich muss einen Stärkerettungswurf ablegen. Bei einem Misserfolg erleidet ein Ziel 2W6 nekrotischen Schaden und kann bis zu seinem nächsten Zug keine Reaktion verwenden. Bei einem erfolgreichen Rettungswurf nimmt die Kreatur halben Schaden, erleidet aber keine anderen Auswirkungen.",
   "***Auf höheren Graden:*** Wenn du diesen Spruch mit eimem Zauberplatz des 2. oder eines höheren Grades wirkst, steigt der Schaden für jeden Grad über den 1. hinaus um 1W6.",
+]
+
+[[zauber]]
+name = "Astrale Projektion"
+schule = "Nekromantie"
+grad = 9
+zeitaufwand = "1 Stunde"
+reichweite = "3m"
+verbal = true
+gestik = true
+material = "für jede Kreatur, die du mit diesem Zauber beeinflusst, benötigst du einen roten Zirkon im Wert von mindestens 1.000 GM und einen aufwendig gravierten Silberbarren, der mindestens 100 GM wert ist; alle Gegenstände werden beim Wirken des Zaubers verbraucht"
+wirkungsdauer = "speziell"
+klassen = []
+beschreibung = [
+  "Du und bis zu acht bereitwillige Kreaturen in Reichweite projizieren ihre Astralkörper auf die Astralebene (der Zauber misslingt und das Wirken ist vergeudet, wenn du dich bereits auf dieser Ebene befindest). Der materielle Körper, den du zurucklässt, gilt als bewusstlos und befindet sich in einem Zustand des Scheintodes.",
+  "Dein Astralkörper ähnelt deiner sterblichen Gestalt in beinahe jeder Hinsicht und verfügt auch über deine Spielwerte und Besitztümer. Der wichtigste Unterschied ist eine silberne Kordel, die zwischen deinen Schulterblättern entspringt und sich hinter dir herzieht. Nach 30cm wird sie unsichtbar. Diese Kordel verbindet dich mit deinem materiellen Körper. Solange sie intakt bleibt, kannst du immer deinen Weg zurück finden. Wird die Kordel durchtrennt – was nur passieren kann, wenn ein Effekt explizit erwähnt, dass er dies tut –, werden deine Seele und dein Körper voneinander getrennt, was dich auf der Stelle tötet.",
+  "Deine Astralform kann sich frei durch die Astralebene bewegen und dort durch Portale treten, die in andere Ebenen führen. Wenn du eine neue Ebene betrittst oder zu der zurückkehrst, auf der du dich beim Wirken des Zaubers befunden hast, werden dein Körper und all deine Besitztümer entlang der silbernen Kordel transportiert. Auf diese Weise befindest du dich beim Betreten einer neuen Ebene wieder in deinem Körper. Deine Astralform ist eine eigenständige Inkarnation. Jeglicher Schaden und andere Effekte, die ihr zugefügt werden, haben keinen Einfluss auf deinen physischen Körper und bleiben auch nicht bestehen, wenn du in ihn zurückkehrst.",
+  "Der Zauber endet für dich und deine Gefährten, wenn du eine Aktion verwendest, um diesen aufzuheben. Jede betroffene Kreatur kehrt dann wieder in ihren physischen Körper zurück und erwacht. Der Zauber könnte für dich oder einen deiner Gefährten auch vorzeitig enden. Wird Magie bannen erfolgreich auf eine Astralform oder einen physischen Körper gewirkt, beendet dies die Astrale Projektion für die entsprechende Kreatur. Sobald die Trefferpunkte des physischen Körpers oder der Astralform einer Kreatur auf 0 sinken, endet der Zauber ebenfalls für diese. Wenn der Zauber endet und die Silberkordel intakt ist, zieht diese die Astralform der Kreatur zurück in ihren Körper, was den Scheintod aufhebt.",
+  "Wenn der Zauberwirker vorzeitig zu seinem Körper zurückkehrt, verweilen seine von dem Zauber betroffenen Gefährten in ihrer Astralform und müssen einen Weg zurück in ihren Körper finden, für gewöhnlich indem sie auf 0 Trefferpunkte reduziert werden.",
 ]

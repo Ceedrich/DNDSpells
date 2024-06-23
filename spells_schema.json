@@ -43,7 +43,7 @@
             "description": "Die Schule des Zaubers",
             "type": "string",
             "enum": [
-              "Bann",
+              "Bannmagie",
               "Beschwörung",
               "Erkenntnis",
               "Verzauberung",
