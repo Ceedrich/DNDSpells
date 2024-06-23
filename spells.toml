@@ -26,7 +26,7 @@ zeitaufwand = "1 Minute"
 reichweite = "9m"
 klassen = []
 beschreibung = [
-  "Du erschaffst einein Alarm gegen unerwünschtes Eindringen. W$hle eine Tür, ein Fenster oder einen Bereich in Reichweite, der nicht grösser als ein Würfel mit 6m Kantenlänge sein darf. Bis der Zauberspruch endet, macht dich ein Alarm darauf aufmerksam, wenn eine Kreatur der Grössenkategorie winzig oder grösser in den geschützten Bereich eindringt. Beim Wirken des Zaubers kannst du Kreaturen festlegen, die den Alarm nicht auslösen. Lege ausserdem fest, ob der Alarm geistig oder hörbar ist.",
+  "Du erschaffst einein Alarm gegen unerwünschtes Eindringen. Wähle eine Tür, ein Fenster oder einen Bereich in Reichweite, der nicht grösser als ein Würfel mit 6m Kantenlänge sein darf. Bis der Zauberspruch endet, macht dich ein Alarm darauf aufmerksam, wenn eine Kreatur der Grössenkategorie winzig oder grösser in den geschützten Bereich eindringt. Beim Wirken des Zaubers kannst du Kreaturen festlegen, die den Alarm nicht auslösen. Lege ausserdem fest, ob der Alarm geistig oder hörbar ist.",
   "Ein geistiger Alarm macht sich als Klingeln in deinem Kopf bemerkbar, wenn du dich innerhalb vom 1.5km um den geschützten bereich aufhälst. Das Klingeld weckt dich, falls du schlafen solltest.",
   "Ein hörbarer Alarm erzeugt im Umkreis von 18m für 10 Sekunden das Geräusch einer Handglocke.",
 ]
@@ -89,7 +89,7 @@ zeitaufwand = "1 Stunde"
 reichweite = "18m"
 verbal = true
 gestik = true
-material = "entweder ein mit Essig getr$nkter Brocken Alaun für den Antipathie-Effekt oder ein Tropfen Honig für den Sympathie-Effekt"
+material = "entweder ein mit Essig getränkter Brocken Alaun für den Antipathie-Effekt oder ein Tropfen Honig für den Sympathie-Effekt"
 wirkungsdauer = "10 Tage"
 klassen = []
 beschreibung = [
