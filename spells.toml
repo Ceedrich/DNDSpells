@@ -201,3 +201,142 @@ beschreibung = [
   "Der Zauber endet für dich und deine Gefährten, wenn du eine Aktion verwendest, um diesen aufzuheben. Jede betroffene Kreatur kehrt dann wieder in ihren physischen Körper zurück und erwacht. Der Zauber könnte für dich oder einen deiner Gefährten auch vorzeitig enden. Wird Magie bannen erfolgreich auf eine Astralform oder einen physischen Körper gewirkt, beendet dies die Astrale Projektion für die entsprechende Kreatur. Sobald die Trefferpunkte des physischen Körpers oder der Astralform einer Kreatur auf 0 sinken, endet der Zauber ebenfalls für diese. Wenn der Zauber endet und die Silberkordel intakt ist, zieht diese die Astralform der Kreatur zurück in ihren Körper, was den Scheintod aufhebt.",
   "Wenn der Zauberwirker vorzeitig zu seinem Körper zurückkehrt, verweilen seine von dem Zauber betroffenen Gefährten in ihrer Astralform und müssen einen Weg zurück in ihren Körper finden, für gewöhnlich indem sie auf 0 Trefferpunkte reduziert werden.",
 ]
+
+[[zauber]]
+name = "Ätherische Gestalten"
+schule = "Verwandlung"
+grad = 7
+zeitaufwand = "1 Aktion"
+reichweite = "selbst"
+verbal = true
+gestik = true
+wirkungsdauer = "bis zu 8 Stunden"
+klassen = []
+beschreibung = [
+  "Du betrittst den Grenzbereich der Ätherebene, und zwar dort, wo sie sich mit deiner aktuellen Ebene überschneidet. Für die Wirkungsdauer oder bis du eine Aktion verwendest, um den Zauber aufzuheben, verbleibst du in der Äthergrenze. Während dieser Zeit kannst du dich in jede beliebige Richtung bewegen. Wenn du dich nach oben oder unten bewegst, musst du für jeweils 30cm Bewegung zusätzliche 30cm Bewegungsrate aufwenden. Du kannst die Ebene, von der du gekommen bist, hören und sehen. Allerdings ist sie nur in Grautönen zu erkennen und deine Sicht reicht nicht weiter als 18m.",
+  "Solange du dich auf der Ätherebene befindest, kannst du nur Kreaturen beeinflussen oder von ihnen beeinflusst werden, die sich ebenfalls dort aufhalten. Kreaturen auf einer anderen Ebene können dich weder wahrnehmen noch mit dir interagieren, es sei denn, eine Spezialfähigkeit oder Magie erlaubt es ihnen.",
+  "Du ignorierst alle Gegenstände und Effekte, die sich nicht auf der Ätherebene befinden. Somit bist du in der Lage, dich durch Gegenstände hindurchzubewegen, die du auf der Ebene wahrnimmst, von der du gekommen bist.",
+  "Wenn der Zauber endet, kehrst du sofort auf die Ebene zurück, von der du gekommen bist, und zwar an dem Punkt, an dem du dich augenblicklich aufhältst. Befindest du dich am gleichen Ort wie ein fester Gegenstand oder eine Kreatur, wirst du augenblicklich auf den nächsten nicht besetzten Bereich bewegt, den du einnehmen kannst, und erleidest 1 Punkt Energieschaden für jeweils 30cm, die du bewegt wurdest.",
+  "Der Zauber hat keinen Effekt, wenn du dich beim Wirken bereits auf der Atherebene befindest oder einer Ebene, die nicht an sie angrenzt, beispielsweise den Äußeren Ebenen.",
+  "***Auf höheren Graden:*** Wenn du diesen Spruch mit einem Zauberplatz des 8. oder 9. Grades wirkst, kannst du für jeden Grad über den 7. hinaus bis zu drei bereitwillige Kreaturen als Ziel wählen (inklusive dir selbst). Beim Wirken des Zaubers müssen sich die Kreaturen innerhalb von 3m befinden.",
+]
+
+[[zauber]]
+name = "Attribut Verbessern"
+schule = "Verwandlung"
+grad = 2
+zeitaufwand = "1 Aktion"
+reichweite = "Berührung"
+verbal = true
+gestik = true
+material = "Fell oder Federn eines Tieres"
+konzentration = true
+wirkungsdauer = "bis zu 1 Stunde"
+klassen = []
+beschreibung = [
+  "Du berührst eine Kreatur und gewährst ihr eine magische Verbesserung. Wähle einen der folgenden Effekte. Das Ziel profitiert von diesem, bis der Zauber endet.",
+  "***Ausdauer des Bären:*** Das Ziel ist im Vorteil bei Konstitutionswürfen. Es erhält außerdem 2W6 temporäre Trefferpunkte, die verschwinden, wenn der Zauber endet.",
+  "***Stärke des Stiers:*** Das Ziel ist im Vorteil bei Stärkewürfen und seine Traglast wird verdoppelt.",
+  "***Anmut der Katze:*** Das Ziel ist im Vorteil bei Geschicklichkeitswürfen. Es erleidet außerdem keinen Schaden bei Stürzen aus maximal 6m, solange es nicht kampfunfähig ist.",
+  "***Prachtdes Adlers:*** Das Ziel ist im Vorteil bei Charismawürfen.",
+  "***Gerissenheit des Fuchses:*** Das Ziel ist im Vorteil bei Intelligenzwürfen.",
+  "***Weishei der Eule:*** Das Ziel ist im Vorteil bei Weisheitswürfen.",
+  "***Auf höheren Graden:*** Wenn du diesen Spruch mit einem Zauberplatz des 3. oder eines höheren Grades wirkst, kannst du für jeden Grad über den 2. hinaus eine zusätzliche Kreatur als Ziel wählen.",
+]
+
+[[zauber]]
+name = "Auferstehung"
+schule = "Nekromantie"
+grad = 7
+zeitaufwand = "1 Stunde"
+reichweite = "Berührung"
+verbal = true
+gestik = true
+material = "ein Diamant im Wert von mindestens 1.000 GM, der beim Wirken des Zaubers verbraucht wird."
+wirkungsdauer = "unmittelbar"
+klassen = []
+beschreibung = [
+  "Du berührt eine verstorbene Kreatur, die nicht länger als 100 Jahre tot ist, nicht an Altersschwäche starb und nicht untot war. Wenn die Seele des Ziels frei und willig ist, kehrt die Kreatur mit allen Trefferpunkten ins Leben zurück.",
+  "Der Zauber neutralisiert alle Gifte und heilt alle natürlichen Krankheiten, welche die Kreatur bei ihrem Tod plagten. Magische Krankheiten, Flüche oder ähnliche Effekte kann er nicht aufheben. Wenn diese nicht vor Wirken des Zaubers entfernt werden, treten sie wieder in Kraft, sobald die Kreatur zu neuem Leben erweckt ist.",
+  "Der Zauber schließt alle tödlichen Wunden und stellt alle fehlenden Gliedmaßen wieder her.",
+  "Von den Toten zurückzukehren, ist eine wahre Prüfung für das Ziel. Es erleidet einen Malus von -4 auf alle Angriffs, Rettungs- und Attributswürfe. Immer wenn es eine lange Rast beendet, reduziert sich der Malus um 1, bis er aufgehoben ist.",
+  "Wirkst du den Zauber, um eine Kreatur zum Leben zu erwecken, die länger als 1 Jahr tot ist, bedeutet das eine große Anstrengung für dich. Bis du eine lange Rast beendet hast, kannst du keine weiteren Zauber wirken und bist im Nachteil bei allen Attributs, Angriffs- und Rettungswürfen.",
+]
+
+[[zauber]]
+name = "Auflösung"
+schule = "Verwandlung"
+grad = 6
+zeitaufwand = "1 Aktion"
+reichweite = "18m"
+verbal = true
+gestik = true
+material = "ein Magnetstein und eine Prise Staub"
+wirkungsdauer = "unmittelbar"
+klassen = []
+beschreibung = [
+  "Ein dünner grüner Strahl fährt aus deinem ausgestreckten Finger auf ein Ziel in Reichweite, das du sehen kannst. Das Ziel kann eine Kreatur, ein Gegenstand oder ein Gebilde aus magischer Energie sein, wie die Mauer, die durch den Zauber *Energiewand* erschaffen wird.",
+  "Eine Kreatur, die Ziel dieses Zaubers ist, muss einen Geschicklichkeitsrettungswurf ablegen. Bei einem Misserfolg erleidet sie 10W6+40 Energieschaden. Reduziert dieser Schaden das Ziel auf 0 Trefferpunkte, wird es aufgelöst.",
+  "Eine aufgelöste Kreatur und alles, was sie trägt und in Händen hält (mit Ausnahme von magischen Gegenständen), zerfallen zu einem Haufen feinen, grauen Staubs. Die Kreatur kann nur durch die Zaubersprüche *Wahre Auferstehung* oder *Wunsch* wieder zum Leben erweckt werden.",
+  "Alle nicht-magischen Gegenstände oder Gebilde aus magischer Energie der Größenkategorie groß oder kleiner werden von diesem Zauber automatisch aufgelöst. Ist das Ziel riesig oder größer, löst der Zauber einen Teil davon auf, der einem Würfel mit 3m Kantenlänge entpricht. Magische Gegenstände sind von diesem Zauber nicht betroffen.",
+  "***Auf höheren Graden:*** Wenn du diesen Spruch mit einem Zauberplatz des 7. oder eines höheren Grades wirkst, steigt der Schaden für jeden Grad über den 6. hinaus um 3W6.",
+]
+
+[[zauber]]
+name = "Auf Wasser gehen"
+schule = "Verwandlung"
+grad = 3
+ritual = true
+zeitaufwand = "1 Aktion"
+reichweite = "9m"
+verbal = true
+gestik = true
+material = "ein Stück Kork"
+wirkungsdauer = "1 Stunde"
+klassen = []
+beschreibung = [
+  "Dieser Zauber verleiht die Fähigkeit, sich über flüssige Oberflächen zu bewegen – wie Wasser, Säure, Schlamm, Schnee, Treibsand oder Lava –, als wären sie ungefährlicher, fester Boden (Wesen, die sich über geschmolzene Lava bewegen, erleiden allerdings aufgrund der Hitze Schaden). Bestimme bis zu zehn bereitwillige Kreaturen in Reichweite, die du sehen kannst, welche die Fähigkeit für die Wirkungsdauer erhalten.",
+  "Wenn du eine Kreatur als Ziel wählst, die sich in einer Flüssigkeit befindet oder untergetaucht ist, trägt der Zauber sie mit einer Geschwindigkeit von 18m pro Runde an die Oberfläche.",
+]
+
+[[zauber]]
+name = "Aura der Gesundheit"
+schule = "Hervorrufung"
+grad = 3
+zeitaufwand = "1 Aktion"
+reichweite = "selbst (Radius von 9m)"
+verbal = true
+konzentration = true
+wirkungsdauer = "bis zu 1 Minute"
+klassen = []
+beschreibung = [
+  "Heilende Energie geht von dir aus und erschafft eine Aura mit 9m Radius. Bis der Zauber endet, bewegt sich die Aura mit dir als Mittelpunkt fort. Du kannst eine Bonusaktion verwenden, um bei einer Kreatur innerhalb der Aura (inklusive dir selbst) 2W6 Trefferpunkte zu heilen.",
+]
+
+[[zauber]]
+name = "Aura der Reinheit"
+schule = "Bannmagie"
+grad = 4
+zeitaufwand = "1 Aktion"
+reichweite = "selbst (Radius von 9m)"
+verbal = true
+konzentration = true
+wirkungsdauer = "bis zu 10 Minuten"
+klassen = []
+beschreibung = [
+  "Reinigende Energie strahlt von dir aus und erschafft eine Aura mit 9m Radius. Bis der Zauber endet, bewegt sich die Aura mit dir als Mittelpunkt fort. Alle nicht feindlichen Kreaturen innerhalb der Aura (inklusive dir selbst) können nicht krank werden, erhalten eine Resistenz gegen Giftschaden und sind im Vorteil bei Rettungswürfen gegen Effekte, die folgende Zustände auslösen: betäubt, bezaubert, blind, gelähmt, taub, verängstigt und vergiftet.",
+]
+
+[[zauber]]
+name = "Aura des Lebens"
+schule = "Bannmagie"
+grad = 4
+zeitaufwand = "1 Aktion"
+reichweite = "selbst (Radius von 9m)"
+verbal = true
+konzentration = true
+wirkungsdauer = "bis zu 10 Minuten"
+klassen = []
+beschreibung = [
+  "Lebenserhaltende Energie entströmt dir und erschafft eine Aura mit 9m Radius. Bis der Zauber endet, bewegt sich die Aura mit dir als Mittelpunkt fort. Alle nicht feindlichen Kreaturen innerhalb der Aura (inklusive dir selbst) erhalten eine Resistenz gegen nekrotischen Schaden, außerdem können ihre maximalen Trefferpunkte nicht verringert werden. Zusätzlich erlangen nicht feindliche, lebende Kreaturen 1 Trefferpunkt zurück, wenn sie ihren Zug in der Aura beginnen und 0 Trefferpunkte besitzen.",
+]
