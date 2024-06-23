@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "zauber": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Der Name des Zaubers"
+          },
+          "stufe": {
+            "type": "integer",
+            "description": "Die Stufe des Zaubers",
+            "minimum": 0,
+            "maximum": 9
+          },
+          "beschreibung": {
+            "type": "array",
+            "description": "Die Beschreibung des Zaubers",
+            "items": { "type": "string" }
+          },
+          "klassen": {
+            "description": "Klassen, die diesen Zauber ausführen können",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Kleriker",
+                "Druide",
+                "Paladin",
+                "Waldläufer",
+                "Zauberer",
+                "Hexenmeister",
+                "Magier"
+              ]
+            }
+          },
+          "schule": {
+            "description": "Die Schule des Zaubers",
+            "type": "string",
+            "enum": [
+              "Bann",
+              "Beschwörung",
+              "Erkenntnis",
+              "Verzauberung",
+              "Hervorrufung",
+              "Illusion",
+              "Nekromantie",
+              "Verwandlung"
+            ]
+          },
+          "reichweite": {
+            "description": "Die Reichweite des Zaubers",
+            "type": "string"
+          },
+          "wirkungsdauer": {
+            "description": "Die Wirkungsdauer des Zaubers",
+            "type": "string"
+          },
+          "zeitaufwand": {
+            "description": "Der Zeitaufwand um den Zauber zu wirken",
+            "type": "string"
+          },
+          "verbal": {
+            "type": "boolean"
+          },
+          "gesten": {
+            "type": "boolean"
+          },
+          "material": {
+            "type": "string"
+          },
+          "konzentration": {
+            "type": "boolean"
+          },
+          "ritual": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "beschreibung",
+          "wirkungsdauer",
+          "klassen",
+          "reichweite",
+          "zeitaufwand",
+          "stufe",
+          "schule",
+          "name"
+        ]
+      }
+    }
+  }
+}

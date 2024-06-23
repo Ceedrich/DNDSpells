@@ -1,0 +1,58 @@
+#:schema ./spells_schema.json
+
+[[zauber]]
+name = "Ablenkung"
+schule = "Illusion"
+stufe = 5
+reichweite = "selbst"
+klassen = [] # TODO  
+beschreibung = [
+  "Du wirst unsichtbar, gleichzeitig erscheint ein illusionäres Abbild von dir selbst dort, wo du stehst. Dieses Abbild bleibt für die Wirkungsdauer bestehen, aber die Unsichtbarkeit endet, wenn du angreifst oder einen Zauber wirkst.",
+  "Als Aktion kannst du dein illusionäres Abbild bis zu deiner doppelten Bewegungsrate bewegen und es gestikulieren, sprechen und auf jede Art handeln lassen, die du möchtest.",
+  "Du kannst durch seine Augen sehen und durch seine Ohren hören, als würdest du dort stehen, wo es sich aufhält",
+  "In jedem deiner Züge kannst du als Bonusaktion von deinen Sinnen zu den Sinnen des Abbilds wechseln und andersherum. Solange du seine Sinne nutzt, bist du blind und taub für deine eigene Umgebung",
+]
+gesten = true
+konzentration = true
+wirkungsdauer = "bis zu 1 Stunde"
+zeitaufwand = "1 Aktion"
+
+[[zauber]]
+name = "Alarm"
+schule = "Bann"
+stufe = 1
+ritual = true
+zeitaufwand = "1 Minute"
+reichweite = "9m"
+klassen = []
+beschreibung = [
+  "Du erschaffst einein Alarm gegen unerwünschtes Eindringen. W$hle eine Tür, ein Fenster oder einen Bereich in Reichweite, der nicht grösser als ein Würfel mit 6m Kantenlänge sein darf. Bis der Zauberspruch endet, macht dich ein Alarm darauf aufmerksam, wenn eine Kreatur der Grössenkategorie winzig oder grösser in den geschützten Bereich eindringt. Beim Wirken des Zaubers kannst du Kreaturen festlegen, die den Alarm nicht auslösen. Lege ausserdem fest, ob der Alarm geistig oder hörbar ist.",
+  "Ein geistiger Alarm macht sich als Klingeln in deinem Kopf bemerkbar, wenn du dich innerhalb vom 1.5km um den geschützten bereich aufhälst. Das Klingeld weckt dich, falls du schlafen solltest.",
+  "Ein hörbarer Alarm erzeugt im Umkreis von 18m für 10 Sekunden das Geräusch einer Handglocke.",
+]
+wirkungsdauer = "8 Stunden"
+verbal = true
+gesten = true
+material = "eine winzige Glocke und ein Stück feinen Silberdrahts"
+
+[[zauber]]
+name = "Ansteckung"
+schule = "Nekromantie"
+stufe = 5
+zeitaufwand = "1 Aktion"
+reichweite = "Berührung"
+verbal = true
+gesten = true
+wirkungsdauer = "7 Tage"
+klassen = []
+beschreibung = [
+  "Deine Berührung löst Krankheiten aus. Führe deinen Nahkampf-Zauberangriff gegen eine Kreatur innerhalb deiner Reichweite aus. Bei einem Treffer wird das Ziel vergiftet",
+  "Am Ende eines jeden seiner Züge muss das Ziel einen Konstitutionsrettungswurf ablegen. Gelingen drei dieser Rettungswürfe, ist das Ziel nicht länge vergiftet und der Zauber endet. Misslingen drei Würfe, ist das Ziel nicht länger vergiftet, du kannst aber eine der unten beschriebenen Krankheiten wählen. Diese Krankheit gilt bis zum Ende der Zauberwirkung.",
+  "Da dieser Zauber das Ziel mit einer natürlichen Krankheit ansteckt, sind alle Effekte wirksam, die Krankheiten heilen oder anderseitig lindern.",
+  "***Blendendes Siechtum:*** Schmerzen erfassen den Verstand der Kreatur und ihre Augen werden milchig weiss. Sie ist im Nachteil bei Weisheitswürfen sowie Weisheitsrettungswürfen und gilt als blind.",
+  "***Fleischfäule:*** Das Fleisch der Kreatur verfault. Sie ist im Nachteil bei Charismawürfen und erhält eine Anfälligkeit gegenüber jeglichem Schaden.",
+  "***Gedankenfeuer:*** Der Verstand der Kreatur wird vom Fieber verwirrt. Sie ist im Nachteil bei Intelligenzwürfen und Intelligenzrettungswürfen. Ausserdem verhält sich die Kreatur im Kampf, als würde sie unter den Auswirkungen des Zaubers *Verwirrung* leiden.",
+  "***Krämpfe:*** Die Kreatur wird von Zitterkrämpfen erfasst. Sie ist im Nachteil bei Geschicklichkeitswürfen, Geschicklichkeitsrettungswürfen und Angriffswürfen, die Geschicklichkeit verwenden.",
+  "***Schleimiges Verderben:*** Die Kreatur beginnt heftig zu bluten. Sie ist im Nachteil bei Konstitutionswürfen und Konstitutionsrettungswürfen. Ausserdem ist die Kreatur, immer wenn sie Schaden erleidet, bis zum Ende ihres nächsten Zuges betäubt.",
+  "***Schmutzfieber:*** Ein rasendes Fieber schwächt den Körper der Kreatur. Sie ist im Nachteil bei Stärkewürfen, Stärkerettungswürfen und Angriffswürfen, die Stärke verwenden.",
+]
