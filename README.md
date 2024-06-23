@@ -6,3 +6,5 @@ Das Ziel dieses Repository ist es, die Zauber der deutschen Version des "D&D-Spi
 
 Ich würde mich über Hilfe beim Eintippen der Zauber freuen :).
 
+## Tools
+Zum Validieren der `TOML`-dateien benutze ich das Projekt [taplo](https://taplo.tamasfe.dev/).
