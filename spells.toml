@@ -56,3 +56,81 @@ beschreibung = [
   "***Schleimiges Verderben:*** Die Kreatur beginnt heftig zu bluten. Sie ist im Nachteil bei Konstitutionswürfen und Konstitutionsrettungswürfen. Ausserdem ist die Kreatur, immer wenn sie Schaden erleidet, bis zum Ende ihres nächsten Zuges betäubt.",
   "***Schmutzfieber:*** Ein rasendes Fieber schwächt den Körper der Kreatur. Sie ist im Nachteil bei Stärkewürfen, Stärkerettungswürfen und Angriffswürfen, die Stärke verwenden.",
 ]
+
+[[zauber]]
+name = "Antimagisches Feld"
+schule = "Bann"
+stufe = 8
+zeitaufwand = "1 Aktion"
+reichweite = "Selbst (Sphäre von 3m Radius)"
+verbal = true
+gesten = true
+material = "eine Prise Eisenpulver oder Eisenspäne"
+konzentration = true
+wirkungsdauer = "bis zu eine Stunde"
+klassen = []
+beschreibung = [
+  "Eine unsichtbare Kugel aus Antimagie mit 3m Radius umgibt dich. Dieser Bereich ist von der magischen Energie abgeschnitten, die das Multiversum erfüllt. Innerhalb der Sphäre können keine Zauber gewirkt werden, beschworene Kreaturen verschwinden und selbst magische Gegenstände werden zu gewöhnlichen. Bis der Zauber endet, bewegt sich die Sphäre mit dir als Mittelpunkt fort.",
+  "Zauber und andere magische Effekte, mit Ausnahme solcher, die von einem Artefakt oder einer Gottheit erschaffen wurden, werden in der Sphäre unterdrückt und können nicht in sie eindringen. Ein Zauberplatz, der zum Wirken eines unterdrückten Zaubers verwendet wird, gilt als verbraucht. Solange ein Effekt unterdrückt ist, hat er keine Auswirkung. Der Zeitraum, in dem er unterdrückt wird, ist jedoch Teil seiner Wirkungsdauer.",
+  "***Gezielte Effekte:*** Zauber und andere magische Effekte, wie Magisches Geschoss und Person bezaubern, die eine Kreatur oder einen Gegenstand in der Sphäre zum Ziel haben, beeinflussen ihr Ziel nicht.",
+  "***Magische Flächeneffekte:*** Der Flächeneffekt eines Zaubers oder magischen Effekts, wie eines Feuerballs, kann nicht in die Sphäre eindringen. Wenn sich die Sphäre und ein magischer Flächeneffekt überschneiden, gilt der Teil des Flächeneffekts, der von der Sphäre bedeckt wird, als unterdrückt. Zum Beispiel werden die Flammen einer Feuerwand innerhalb der Sphäre unterdrückt, sodass eine Lücke in der Wand entsteht, wenn die Überschneidung groß genug ist.",
+  "***Zauber:*** Alle aktiven Zauber oder anderen magischen Effekte, die eine Kreatur oder einen Gegenstand in der Sphäre beeinflussen, werden unterdrückt, solange sich die Kreatur oder der Gegenstand in der Sphäre befindet.",
+  "***Magische Gegenstände:*** Die Eigenschaften und Kräfte von magischen Gegenständen werden in der Sphäre unterdrückt. Beispielsweise ist ein Langschwert +1 in der Sphäre nur ein ganz gewöhnliches Langschwert.",
+  "***Magische Bewegung:*** Teleportation und Reisen durch die Ebenen funktionieren in der Sphäre nicht, gleichgültig ob die Sphäre das Ziel oder der Startpunkt dieser magischen Reise ist. Ein Portal an einen anderen Ort, eine Welt oder Existenzebene sowie Öffnungen in einen außerdimensionalen Raum, wie sie vom Zauber Seiltrick erschaffen werden, schließen sich für die Dauer, die sie sich in der Sphäre befinden.",
+  "***Kreaturen und Gegenstände:*** Kreaturen oder Gegenstände, die auf magische Weise erschaffen oder beschworen wurden, hören in der Sphäre kurzzeitig auf zu existieren. Sie erscheinen sofort wieder, wenn der Ort, an dem sie sich zuletzt befanden, nicht mehr von der Sphäre bedeckt wird.",
+  "***Magie bannen:*** Zauber und magische Effekte wie Magie bannen haben in der Sphäre keine Auswirkungen. Gleichermaßen können sich die Sphären, die von zwei verschiedenen Antimagischen Feldern erschaffen werden, nicht gegenseitig aufheben.",
+]
+
+[[zauber]]
+name = "Antipathie/Sympathie"
+schule = "Verzauberung"
+stufe = 8
+zeitaufwand = "1 Stunde"
+reichweite = "18m"
+verbal = true
+gesten = true
+material = "entweder ein mit Essig getr$nkter Brocken Alaun für den Antipathie-Effekt oder ein Tropfen Honig für den Sympathie-Effekt"
+wirkungsdauer = "10 Tage"
+klassen = []
+beschreibung = [
+  "Dieser Zauber zieht Kreaturen deiner Wahl an oder stößt sie ab. Du wirkst den Zauber auf etwas in Reichweite, entweder einen Gegenstand der Größenkategorie riesig oder kleiner oder einen Bereich, der nicht größer ist als ein Würfel mit 60m Kantenlänge. Dann bestimme eine Art von intelligenter Kreatur, wie rote Drachen, Goblins oder Vampire.",
+  "Du erfüllst das Ziel mit einer Aura, welche die gewählten Kreaturen für die Wirkungsdauer entweder anzieht oder abstößt. Wähle Antipathie oder Sympathie für den Effekt der Aura.",
+  "***Antipathie:*** Diese Verzauberung erfüllt Kreaturen der gewählten Art mit einem starken Drang, die Umgebung zu verlassen und das Ziel zu meiden. Wenn eine solche Kreatur das Ziel sehen kann oder sich in einen Umkreis von 18m um es begibt, muss ihr ein Weisheitsrettungswurf gelingen, um nicht verangstigt zu werden. Die Kreatur bleibt verängstigt, solange sie das Ziel sehen kann oder sich innerhalb des Radius von 18m befindet. Solange sie durch das Ziel verängstigt ist, muss sie ihre Bewegung verwenden, um sich an den nächsten sicheren Ort zu begeben, an dem sie das Ziel nicht sehen kann. Wenn sich die Kreatur mehr als 18m vom Ziel entfernt und es nicht mehr sehen kann, ist sie nicht länger verängstigt. Sie erhält den Zustand jedoch erneut, wenn sie das Ziel wieder sehen kann oder sich auf 18m oder weniger nähert.",
+  "***Sympathie:*** Die Verzauberung sorgt dafür, dass Kreaturen der gewählten Art einen starken Drang verspüren, sich dem Ziel auf mindestens 18m zu nähern oder es zu sehen. Wenn eine solche Kreatur das Ziel sehen kann oder sich in einen Umkreis von 18m um es begibt, muss sie einen Weisheitsrettungswurf ablegen. Wenn dieser misslingt, muss sie ihre Bewegung in jedem ihrer Züge verwenden, um den Bereich zu betreten oder sich in Berührungsweite des Ziels zu begeben. Wenn die Kreatur dies getan hat, kann sie sich nicht willentlich vom Ziel entfernen.",
+  "Wenn das Ziel eine beeinflusste Kreatur verletzt oder ihr anderweitig schadet, darf diese einen Weisheitsrettungswurf ablegen, um den Effekt zu beenden, wie es unten beschrieben ist.",
+  "***Den Effekt beenden:*** Wenn sich eine beeinflusste Kreatur am Ende ihres Zuges außerhalb von 18m um das Ziel befindet und es nicht sehen kann, legt sie einen Weisheitsrettungswurf ab. Bei einem Erfolg ist die Kreatur nicht länger vom Effekt des Zaubers betroffen und begreift, dass das Gefühl der Abstoßung oder Anziehung magischer Natur ist. Außerdem darf eine Kreatur, die unter dem Einfluss dieses Zaubers steht (solange dieser wirkt), alle 24 Stunden einen weiteren Rettungswurf ablegen.",
+  "Eine Kreatur, der ein Rettungswurf gegen den Effekt gelingt, ist für eine 1 Minute gegen seine Auswirkungen immun. Danach kann er wieder in Kraft treten.",
+]
+
+[[zauber]]
+name = "Arkanes Auge"
+schule = "Erkenntnis"
+stufe = 4
+zeitaufwand = "1 Aktion"
+reichweite = "9m"
+verbal = true
+gesten = true
+material = "etwas Fledermausfell"
+konzentration = true
+wirkungsdauer = "bis zu einer Stunde"
+klassen = []
+beschreibung = [
+  "Du erschaffst ein unsichtbares, magisches Auge in Reichweite, das für die Wirkungsdauer in der Luft schwebt. Du erhältst auf geistige Weise visuelle Informationen von dem Auge, das über normale Sicht sowie eine Dunkelsicht von 9m verfügt. Das Auge kann in alle Richtungen blicken.",
+  "Als Aktion kannst du das Auge 9m beliebig bewegen. Es darf sich von dir entfernen, aber nicht eine andere Ebene der Existenz betreten. Eine feste Barriere blockiert die Bewegung des Auges, es ist aber in der Lage, sich durch Öffnungen mit 2,5 cm Durchmesser zu zwängen.",
+]
+
+[[zauber]]
+name = "Arkanes Schloss"
+schule = "Bann"
+stufe = 2
+zeitaufwand = "1 Aktion"
+reichweite = "Berührung"
+verbal = true
+gesten = true
+material = "Goldstaub im Wert von mindestens 25GM, der beim Wirken des Zaubers verbraucht wird"
+wirkungsdauer = "bis der Zauber gebannt wird"
+klassen = []
+beschreibung = [
+  "Du berührst eine geschlossene Tür, ein Fenster, Tor, eine Kiste oder einen anderen Eingang, der für die Wirkungsdauer versiegelt wird. Du und andere Kreaturen, die du beim Wirken des Zaubers festlegst, können den Gegenstand normal öffnen. Du kannst auch ein Passwort festlegen, dass den Zauber für 1 Minute unterdrückt, wenn es innerhalb von 1,5m um den Gegenstand ausgesprochen wird. Ansonsten ist der Durchgang nicht zu passieren, bis er zerstört oder der Zauber gebannt wird. *Klopfen* auf den Gegenstand zu wirken, unterdrückt *Arkanes Schloss* für 10 Minuten.",
+  "Solange der Gegenstand von diesem Zauber betroffen wird, ist er schwieriger zu zerstören oder aufzubrechen: Der SG eines Wurfes, um den Gegenstand zu zerbrechen oder zu knacken, steigt um 10.",
+]
