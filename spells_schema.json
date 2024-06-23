@@ -12,9 +12,9 @@
             "type": "string",
             "description": "Der Name des Zaubers"
           },
-          "stufe": {
+          "grad": {
             "type": "integer",
-            "description": "Die Stufe des Zaubers",
+            "description": "Der Grad des Zaubers",
             "minimum": 0,
             "maximum": 9
           },
@@ -68,7 +68,7 @@
           "verbal": {
             "type": "boolean"
           },
-          "gesten": {
+          "gestik": {
             "type": "boolean"
           },
           "material": {
@@ -87,7 +87,7 @@
           "klassen",
           "reichweite",
           "zeitaufwand",
-          "stufe",
+          "grad",
           "schule",
           "name"
         ]

@@ -3,7 +3,7 @@
 [[zauber]]
 name = "Ablenkung"
 schule = "Illusion"
-stufe = 5
+grad = 5
 reichweite = "selbst"
 klassen = [] # TODO  
 beschreibung = [
@@ -12,7 +12,7 @@ beschreibung = [
   "Du kannst durch seine Augen sehen und durch seine Ohren hören, als würdest du dort stehen, wo es sich aufhält",
   "In jedem deiner Züge kannst du als Bonusaktion von deinen Sinnen zu den Sinnen des Abbilds wechseln und andersherum. Solange du seine Sinne nutzt, bist du blind und taub für deine eigene Umgebung",
 ]
-gesten = true
+gestik = true
 konzentration = true
 wirkungsdauer = "bis zu 1 Stunde"
 zeitaufwand = "1 Aktion"
@@ -20,7 +20,7 @@ zeitaufwand = "1 Aktion"
 [[zauber]]
 name = "Alarm"
 schule = "Bann"
-stufe = 1
+grad = 1
 ritual = true
 zeitaufwand = "1 Minute"
 reichweite = "9m"
@@ -32,17 +32,17 @@ beschreibung = [
 ]
 wirkungsdauer = "8 Stunden"
 verbal = true
-gesten = true
+gestik = true
 material = "eine winzige Glocke und ein Stück feinen Silberdrahts"
 
 [[zauber]]
 name = "Ansteckung"
 schule = "Nekromantie"
-stufe = 5
+grad = 5
 zeitaufwand = "1 Aktion"
 reichweite = "Berührung"
 verbal = true
-gesten = true
+gestik = true
 wirkungsdauer = "7 Tage"
 klassen = []
 beschreibung = [
@@ -60,11 +60,11 @@ beschreibung = [
 [[zauber]]
 name = "Antimagisches Feld"
 schule = "Bann"
-stufe = 8
+grad = 8
 zeitaufwand = "1 Aktion"
 reichweite = "Selbst (Sphäre von 3m Radius)"
 verbal = true
-gesten = true
+gestik = true
 material = "eine Prise Eisenpulver oder Eisenspäne"
 konzentration = true
 wirkungsdauer = "bis zu eine Stunde"
@@ -84,11 +84,11 @@ beschreibung = [
 [[zauber]]
 name = "Antipathie/Sympathie"
 schule = "Verzauberung"
-stufe = 8
+grad = 8
 zeitaufwand = "1 Stunde"
 reichweite = "18m"
 verbal = true
-gesten = true
+gestik = true
 material = "entweder ein mit Essig getr$nkter Brocken Alaun für den Antipathie-Effekt oder ein Tropfen Honig für den Sympathie-Effekt"
 wirkungsdauer = "10 Tage"
 klassen = []
@@ -105,11 +105,11 @@ beschreibung = [
 [[zauber]]
 name = "Arkanes Auge"
 schule = "Erkenntnis"
-stufe = 4
+grad = 4
 zeitaufwand = "1 Aktion"
 reichweite = "9m"
 verbal = true
-gesten = true
+gestik = true
 material = "etwas Fledermausfell"
 konzentration = true
 wirkungsdauer = "bis zu einer Stunde"
@@ -122,15 +122,63 @@ beschreibung = [
 [[zauber]]
 name = "Arkanes Schloss"
 schule = "Bann"
-stufe = 2
+grad = 2
 zeitaufwand = "1 Aktion"
 reichweite = "Berührung"
 verbal = true
-gesten = true
+gestik = true
 material = "Goldstaub im Wert von mindestens 25GM, der beim Wirken des Zaubers verbraucht wird"
 wirkungsdauer = "bis der Zauber gebannt wird"
 klassen = []
 beschreibung = [
   "Du berührst eine geschlossene Tür, ein Fenster, Tor, eine Kiste oder einen anderen Eingang, der für die Wirkungsdauer versiegelt wird. Du und andere Kreaturen, die du beim Wirken des Zaubers festlegst, können den Gegenstand normal öffnen. Du kannst auch ein Passwort festlegen, dass den Zauber für 1 Minute unterdrückt, wenn es innerhalb von 1,5m um den Gegenstand ausgesprochen wird. Ansonsten ist der Durchgang nicht zu passieren, bis er zerstört oder der Zauber gebannt wird. *Klopfen* auf den Gegenstand zu wirken, unterdrückt *Arkanes Schloss* für 10 Minuten.",
   "Solange der Gegenstand von diesem Zauber betroffen wird, ist er schwieriger zu zerstören oder aufzubrechen: Der SG eines Wurfes, um den Gegenstand zu zerbrechen oder zu knacken, steigt um 10.",
+]
+
+[[zauber]]
+name = "Arkane Spiegelung"
+schule = "Illusion"
+grad = 7
+zeitaufwand = "10 Minuten"
+reichweite = "Sicht"
+verbal = true
+gestik = true
+wirkungsdauer = "10 Tage"
+klassen = []
+beschreibung = [
+  "Du lässt das Gelände in einem Gebiet von 1,5km x 1,5km wie eine andere Art von Gelände aussehen, klingen, riechen und beeinflusst sogar, wie es sich anfühlt. Die grundsätzliche Gestalt der Landschaft bleibt aber dieselbe. Offene Felder oder eine Straße können wie ein Sumpf, ein Hügel, eine Erdspalte oder eine andere Art von schwierigem oder unpassierbarem Gelände erscheinen, ein Tümpel wie eine grasige Wiese, ein Abhang wie ein sanftes Gefälle oder eine mit Felsen übersäte Schlucht wie eine breite, flache Straße.",
+  "Gleichermaßen bist du in der Lage, das Aussehen von Bauwerken zu verändern oder sie entstehen zu lassen, wo es keine gibt. Der Zauber kann keine Kreaturen verkleiden, verbergen oder hinzufügen. Die Illusion umfasst hörbare, visuelle, berührbare und olfaktorische Elemente, sodass sie freies Gelände in schwieriges verwandeln kann (und andersherum) oder anderweitig die Bewegung durch das Gebiet zu behindern vermag. Jedes Stück illusionäres Gelände (wie ein Fels oder ein Stock), das aus dem Bereich des Zaubers entfernt wird, verschwindet sofort.",
+  "Kreaturen unter dem Einfluss von Wahrer Blick durchschauen die Illusion und erkennen die wahre Gestalt der Landschaft. Alle anderen Elemente der Illusion bleiben aber bestehen. Selbst wenn sich die Kreatur also der Illusion bewusst ist, kann sie noch immer physisch mit ihr interagieren.",
+]
+
+[[zauber]]
+name = "Arkanes Tor"
+schule = "Beschwörung"
+grad = 6
+zeitaufwand = "1 Aktion"
+reichweite = "150m"
+verbal = true
+gestik = true
+konzentration = true
+wirkungsdauer = "bis zu 10 Minuten"
+klassen = []
+beschreibung = [
+  "Du erschaffst miteinander verbundene Teleportationsportale, die für die Wirkungsdauer geöffnet bleiben. Wähle zwei Punkte auf dem Boden, die du sehen kannst: einen innerhalb von 3m und einen innerhalb von 150m. Über jedem Punkt öffnet sich ein kreisförmiges Portal mit 3m Durchmesser. Wenn sich das Portal in einem Bereich öffnen würde, in dem sich eine Kreatur aufhält, scheitert der Zauber und das Wirken war vergeblich.",
+  "Bei den Portalen handelt es sich um zweidimensionale, leuchtende Ringe, die mit Nebel gefüllt sind und die nur wenige Zentimeter über dem Boden schweben, lotrecht zum Punkt, den du ausgewählt hast. Die Ringe sind nur von einer Seite aus sichtbar (deine Wahl), dies ist die Seite, die als Portal fungiert.",
+  "Kreaturen oder Gegenstände, die das Portal betreten, verlassen das andere, als würden beide aneinander angrenzen. Von der Rückseite durch ein Portal zu treten, hat keinerlei Auswirkungen. Der Nebel, der jedes Portal füllt, ist mit Blicken nicht zu durchdringen: Es ist weder erkennbar, was sich auf der Rückseite des Portals befindet noch vor dem anderen Portal. In deinem Zug kannst du die Ringe als Bonusaktion rotieren lassen, sodass die aktive Seite in eine andere Richtung zeigt.",
+]
+
+[[zauber]]
+name = "Arme von Hadar"
+schule = "Beschwörung"
+grad = 1
+zeitaufwand = "1 Aktion"
+reichweite = "selbst (Radius von 3m)"
+verbal = true
+gestik = true
+wirkungsdauer = "unmittelbar"
+klassen = []
+beschreibung = [
+  "Du berufst dich auf die Macht Hadars, des Dunklen Hungers. Tentakel aus finsterer Energie brechen aus dir hervor und schlagen auf alle Kreaturen innerhalb von 3m ein. Jede Kreatur in diesem Bereich muss einen Stärkerettungswurf ablegen. Bei einem Misserfolg erleidet ein Ziel 2W6 nekrotischen Schaden und kann bis zu seinem nächsten Zug keine Reaktion verwenden. Bei einem erfolgreichen Rettungswurf nimmt die Kreatur halben Schaden, erleidet aber keine anderen Auswirkungen.",
+  "***Auf höheren Graden:*** Wenn du diesen Spruch mit eimem Zauberplatz des 2. oder eines höheren Grades wirkst, steigt der Schaden für jeden Grad über den 1. hinaus um 1W6.",
 ]
