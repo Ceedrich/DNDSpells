@@ -16,17 +16,17 @@ Momentan enthält die `spells.toml` Datei lediglich eine liste von Zaubern in de
 
 ```toml
 [[zauber]]
-name = # string
-schule = # Bannmagie | Beschwörung | Erkenntnis | Verzauberung | Hervorrufung | Illusion | Nekromantie | Verwandlung
-grad = # zwischen 0 und 9
-ritual = # boolean (optional)
-zeitaufwand = # string
-reichweite = # string
-verbal = # boolean (optional)
-gestik = # boolean (optional)
-material = # string (optional)
-konzentration = #boolean (optional)
-wirkungsdauer = # string
+name = "" # string
+schule = "" # Bannmagie | Beschwörung | Erkenntnis | Verzauberung | Hervorrufung | Illusion | Nekromantie | Verwandlung
+grad = 0 # zwischen 0 und 9
+ritual = false # boolean (optional)
+zeitaufwand = "" # string
+reichweite = "" # string
+verbal = false # boolean (optional)
+gestik = false # boolean (optional)
+material = false # string (optional)
+konzentration = false #boolean (optional)
+wirkungsdauer = "" # string
 
 # liste der klassen, die diesn Zauber ausführen können
 klassen = [] # Kleriker | Druide | Paladin | Waldläufer | Zauberer | Hexenmeister | Magier
