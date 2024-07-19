@@ -1,30 +1,32 @@
 import { z } from "zod";
 
+export const klassen = [
+  "Kleriker",
+  "Druide",
+  "Paladin",
+  "Waldläufer",
+  "Zauberer",
+  "Hexenmeister",
+  "Magier",
+] as const;
+
+export const schulen = [
+  "Bannmagie",
+  "Beschwörung",
+  "Erkenntnis",
+  "Verzauberung",
+  "Hervorrufung",
+  "Illusion",
+  "Nekromantie",
+  "Verwandlung",
+] as const;
+
 export const spellSchema = z.object({
   name: z.string(),
   grad: z.number().int().min(0).max(9),
   beschreibung: z.array(z.string()),
-  klassen: z.array(
-    z.union([
-      z.literal("Kleriker"),
-      z.literal("Druide"),
-      z.literal("Paladin"),
-      z.literal("Waldläufer"),
-      z.literal("Zauberer"),
-      z.literal("Hexenmeister"),
-      z.literal("Magier"),
-    ]),
-  ),
-  schule: z.union([
-    z.literal("Bannmagie"),
-    z.literal("Beschwörung"),
-    z.literal("Erkenntnis"),
-    z.literal("Verzauberung"),
-    z.literal("Hervorrufung"),
-    z.literal("Illusion"),
-    z.literal("Nekromantie"),
-    z.literal("Verwandlung"),
-  ]),
+  klassen: z.array(z.enum(klassen)),
+  schule: z.enum(schulen),
   reichweite: z.string(),
   wirkungsdauer: z.string(),
   zeitaufwand: z.string(),
