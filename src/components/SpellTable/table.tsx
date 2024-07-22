@@ -13,10 +13,11 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
+  Table,
 } from "@tanstack/react-table";
 
 import {
-  Table,
+  Table as TableRoot,
   TableBody,
   TableCell,
   TableHead,
@@ -30,10 +31,12 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
-import { schulen } from "@/schemas/Spell";
+import { klassen, schulen } from "@/schemas/Spell";
+import { DualRangeSlider } from "../ui/dual-range-slider";
 
 type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];
@@ -50,6 +53,10 @@ export function SpellTable<TData, TValue>({
   const [schuleFilter, setSchuleFilter] = useState<(typeof schulen)[number][]>([
     ...schulen,
   ]);
+  const [klassenFilter, setKlassenFilter] = useState<
+    (typeof klassen)[number][]
+  >([...klassen]);
+
   const [gradFilter, setGradFilter] = useState({ min: 0, max: 9 });
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
     beschreibung: false,
@@ -101,11 +108,34 @@ export function SpellTable<TData, TValue>({
               })}
           </DropdownMenuContent>
         </DropdownMenu>
+      </div>
+      <div className="flex items-center gap-8 py-4">
+        <div className="title">
+          <strong>Filter: </strong>
+        </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline">Schulen</Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start">
+            <DropdownMenuCheckboxItem
+              checked={
+                schuleFilter.length === schulen.length
+                  ? true
+                  : schuleFilter.length === 0
+                    ? false
+                    : "indeterminate"
+              }
+              onCheckedChange={(checked) => {
+                const data = checked ? [...schulen] : [];
+                setSchuleFilter(data);
+                table.getColumn("schule")?.setFilterValue(data);
+              }}
+            >
+              Alle
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuSeparator />
+
             {schulen.map((schule, idx) => (
               <DropdownMenuCheckboxItem
                 key={idx}
@@ -128,35 +158,49 @@ export function SpellTable<TData, TValue>({
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
-        <Input
-          type="number"
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline">Klassen</Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start">
+            {klassen.map((klasse, idx) => (
+              <DropdownMenuCheckboxItem
+                key={idx}
+                checked={klassenFilter.includes(klasse)}
+                onCheckedChange={(value) => {
+                  if (value) {
+                    setKlassenFilter([...klassenFilter, klasse]);
+                    table
+                      .getColumn("schule")
+                      ?.setFilterValue([...klassenFilter, klasse]);
+                  } else {
+                    const x = klassenFilter.filter((s) => s != klasse);
+                    setKlassenFilter(x);
+                    table.getColumn("klassen")?.setFilterValue(x);
+                  }
+                }}
+              >
+                {klasse}
+              </DropdownMenuCheckboxItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        <DualRangeSlider
           min={0}
           max={9}
-          className="w-20"
-          value={gradFilter.min}
-          onChange={(event) => {
-            const value = parseInt(event.target.value);
-            if (value > gradFilter.max) return;
-            setGradFilter({ ...gradFilter, min: value });
-            table
-              .getColumn("grad")
-              ?.setFilterValue({ ...gradFilter, min: value });
+          step={1}
+          label={(value) => value}
+          labelPosition="top"
+          defaultValue={[0, 9]}
+          value={[gradFilter.min, gradFilter.max]}
+          onValueChange={(value) => {
+            const [a, b] = value;
+            const [min, max] = [Math.min(a, b), Math.max(a, b)];
+            setGradFilter({ min, max });
+            table.getColumn("grad")?.setFilterValue({ min, max });
           }}
-        />
-        <Input
-          type="number"
-          min={0}
-          max={9}
-          className="w-20"
-          value={gradFilter.max}
-          onChange={(event) => {
-            const value = parseInt(event.target.value);
-            if (value < gradFilter.min) return;
-            setGradFilter({ ...gradFilter, max: value });
-            table
-              .getColumn("grad")
-              ?.setFilterValue({ ...gradFilter, max: value });
-          }}
+          className="w-40 pt-8"
         />
       </div>
       <div className="flex items-end gap-4">
@@ -170,7 +214,7 @@ export function SpellTable<TData, TValue>({
         />
       </div>
       <div className="rounded-md border">
-        <Table>
+        <TableRoot>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
@@ -214,7 +258,7 @@ export function SpellTable<TData, TValue>({
               </TableRow>
             )}
           </TableBody>
-        </Table>
+        </TableRoot>
       </div>
       <div className="flex items-center space-x-2 py-4">
         <Button
@@ -242,7 +286,6 @@ export function SpellTable<TData, TValue>({
           const selected_rows = table.getSelectedRowModel().rows.map((row) => {
             return row.getValue("name");
           });
-          console.log(selected_rows);
           const x = btoa(JSON.stringify(selected_rows));
           router.push(`/export/${x}`);
         }}
@@ -250,5 +293,60 @@ export function SpellTable<TData, TValue>({
         Zauber exportieren
       </Button>
     </>
+  );
+}
+
+type CategoryFilterDropdownMenuProps<TData> = {
+  table: Table<TData>;
+  columnId: string;
+  name: string;
+  categories: readonly string[];
+};
+
+function CategoryFilterDropdownMenu<TData>({
+  table,
+  columnId,
+  name,
+  categories,
+}: CategoryFilterDropdownMenuProps<TData>) {
+  const [filter, setFilter] = useState<(typeof categories)[number][]>([
+    ...categories,
+  ]);
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline">{name}</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start">
+        <DropdownMenuCheckboxItem
+          checked={
+            filter.length === categories.length
+              ? true
+              : filter.length === 0
+                ? false
+                : "indeterminate"
+          }
+        >
+          Alle
+        </DropdownMenuCheckboxItem>
+        <DropdownMenuSeparator />
+        {categories.map((item, idx) => (
+          <DropdownMenuCheckboxItem
+            key={idx}
+            checked={filter.includes(item)}
+            onCheckedChange={(value) => {
+              const data = value
+                ? [...filter, item]
+                : filter.filter((i) => i != item);
+              setFilter(data);
+              table.getColumn(columnId)?.setFilterValue(data);
+            }}
+          >
+            {item}
+          </DropdownMenuCheckboxItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
