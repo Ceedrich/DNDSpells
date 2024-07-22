@@ -4,9 +4,13 @@ import { spells } from "@/globals";
 
 export default async function Home() {
   return (
-    <div className="container">
-      <h1 className="text-4xl">Dungeons and Dragons: Zauber</h1>
-      <SpellTable columns={columns} data={spells} />
-    </div>
+    <>
+      <header className="p-4">
+        <h1 className="text-4xl font-semibold">Dungeons and Dragons: Zauber</h1>
+      </header>
+      <main className="container">
+        <SpellTable columns={columns} data={spells} />
+      </main>
+    </>
   );
 }

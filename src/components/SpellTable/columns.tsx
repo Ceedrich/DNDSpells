@@ -1,27 +1,44 @@
 "use client";
 
-import { ColumnDef, HeaderContext } from "@tanstack/react-table";
+import { ColumnDef, HeaderContext, Row } from "@tanstack/react-table";
 import { ArrowUpDown } from "lucide-react";
 
-import type { Spell } from "@/schemas/Spell";
+import { schulen, type Spell } from "@/schemas/Spell";
 import { Button } from "../ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { formatComponents } from "@/utils/formatComponents";
 
 const sortingHeader = (header: string) =>
   function Header({ column }: HeaderContext<Spell, unknown>) {
     return (
-      <Button
-        variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        {header} <ArrowUpDown className="ml-1" />
-      </Button>
+      <>
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          {header} <ArrowUpDown className="ml-1" />
+        </Button>
+      </>
     );
+  };
+
+const categoryFilter =
+  (categories: readonly string[]) =>
+  (row: Row<Spell>, id: string, filterValue: (typeof categories)[number][]) => {
+    return filterValue.includes(row.getValue(id));
+  };
+
+const numberFilter =
+  () =>
+  (row: Row<Spell>, id: string, { min, max }: { min: number; max: number }) => {
+    const value = parseInt(row.getValue(id));
+    return value <= max && value >= min;
   };
 
 export const columns: ColumnDef<Spell>[] = [
   {
     id: "selected",
+    enableHiding: false,
     header: ({ table }) => (
       <Checkbox
         checked={
@@ -43,14 +60,17 @@ export const columns: ColumnDef<Spell>[] = [
   {
     accessorKey: "name",
     header: sortingHeader("Name"),
+    enableHiding: false,
   },
   {
     accessorKey: "grad",
     header: sortingHeader("Grad"),
+    filterFn: numberFilter(),
   },
   {
     accessorKey: "schule",
     header: sortingHeader("Schule"),
+    filterFn: categoryFilter(schulen),
   },
   {
     accessorKey: "zeitaufwand",
@@ -58,14 +78,8 @@ export const columns: ColumnDef<Spell>[] = [
   },
   {
     id: "komponenten",
-    header: sortingHeader("Komponenten"),
-    accessorFn: (row) => {
-      const comps = [];
-      if (row.verbal) comps.push("V");
-      if (row.gestik) comps.push("G");
-      if (row.material) comps.push("M");
-      return comps.join(",");
-    },
+    header: "Komponenten",
+    accessorFn: (row) => formatComponents({ ...row }, false),
   },
   {
     accessorKey: "konzentration",

@@ -1,4 +1,5 @@
 import { Spell } from "@/schemas/Spell";
+import { formatComponents } from "@/utils/formatComponents";
 import { ComponentProps } from "react";
 
 type SpellCardProps = {
@@ -23,22 +24,14 @@ export function SpellCard({ spell }: SpellCardProps) {
         </li>
         <li>
           <span className="font-bold">Komponenten: </span>
-          {/* TODO  */}
+          {formatComponents(spell)}
         </li>
         <li>
           <span className="font-bold">Wirkungsdauer: </span>
           {spell.wirkungsdauer}
         </li>
       </ul>
-      <div>
-        {spell.beschreibung.map((p, i) => (
-          <p key={i}>
-            {p
-              .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-              .replace(/\*(.*?)\*/g, "<em>$1</em>")}
-          </p>
-        ))}
-      </div>
+      <div dangerouslySetInnerHTML={{ __html: spell.beschreibung_HTML }}></div>
     </div>
   );
 }
