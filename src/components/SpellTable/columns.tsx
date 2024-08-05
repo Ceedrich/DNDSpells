@@ -1,12 +1,20 @@
 "use client";
 
 import { ColumnDef, HeaderContext, Row } from "@tanstack/react-table";
-import { ArrowUpDown } from "lucide-react";
+import { ArrowUpDown, Info } from "lucide-react";
+import Markdown from "react-markdown";
 
-import { schulen, type Spell } from "@/schemas/Spell";
+import { klassen, schulen, type Spell } from "@/schemas/Spell";
 import { Button } from "../ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { formatComponents } from "@/utils/formatComponents";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const sortingHeader = (header: string) =>
   function Header({ column }: HeaderContext<Spell, unknown>) {
@@ -21,11 +29,23 @@ const sortingHeader = (header: string) =>
       </>
     );
   };
-
+// BUG: Something wrong here, but i don't know what.
+// It fails if you deselect all "klassen" and then selecte one "klasse" again...
 const categoryFilter =
   (categories: readonly string[]) =>
   (row: Row<Spell>, id: string, filterValue: (typeof categories)[number][]) => {
-    return filterValue.includes(row.getValue(id));
+    const value = row.getValue(id);
+    if (typeof value === "string") {
+      if (value === "") return true;
+      return filterValue.includes(value);
+    }
+    if (Array.isArray(value)) {
+      if (value.length === 0) {
+        return true;
+      }
+      return value.filter((val) => filterValue.includes(val)).length > 0;
+    }
+    return false;
   };
 
 const numberFilter =
@@ -73,6 +93,11 @@ export const columns: ColumnDef<Spell>[] = [
     filterFn: categoryFilter(schulen),
   },
   {
+    accessorKey: "klassen",
+    header: sortingHeader("Klassen"),
+    filterFn: categoryFilter(klassen),
+  },
+  {
     accessorKey: "zeitaufwand",
     header: sortingHeader("Zeitaufwand"),
   },
@@ -100,13 +125,22 @@ export const columns: ColumnDef<Spell>[] = [
     accessorKey: "beschreibung",
     header: "Beschreibung",
     cell: ({ row }) => {
-      const description = row.getValue("beschreibung") as string[];
+      const description = row.getValue("beschreibung");
       return (
-        <div className="text-left font-medium text-ellipsis">
-          {description.map((paragraph, index) => (
-            <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
-          ))}
-        </div>
+        <Dialog>
+          <DialogTrigger>
+            <Info />
+          </DialogTrigger>
+          <DialogContent>
+            <DialogDescription>
+              <Markdown>
+                {Array.isArray(description)
+                  ? description.join("\n\n")
+                  : "Keine Beschreibung verfügbar"}
+              </Markdown>
+            </DialogDescription>
+          </DialogContent>
+        </Dialog>
       );
     },
   },

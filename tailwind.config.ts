@@ -21,8 +21,11 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        heading: ["Crimson Text", ...fontFamily.serif],
       },
       colors: {
+        parchment: "#DFD2AF",
+        heading: "#6D0000",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -38,5 +38,7 @@
   body {
     @apply bg-background text-foreground;
   }
+  p {
+    @apply mb-2 print:mb-0;
+  }
 }
-

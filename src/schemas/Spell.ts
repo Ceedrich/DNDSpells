@@ -37,4 +37,4 @@ export const spellSchema = z.object({
   ritual: z.boolean().optional(),
 });
 
-export type Spell = z.infer<typeof spellSchema> & { beschreibung_HTML: string };
+export type Spell = z.infer<typeof spellSchema>;

@@ -16,6 +16,8 @@ import {
   Table,
 } from "@tanstack/react-table";
 
+import { Label } from "@/components/ui/label";
+
 import {
   Table as TableRoot,
   TableBody,
@@ -50,17 +52,8 @@ export function SpellTable<TData, TValue>({
   const router = useRouter();
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [schuleFilter, setSchuleFilter] = useState<(typeof schulen)[number][]>([
-    ...schulen,
-  ]);
-  const [klassenFilter, setKlassenFilter] = useState<
-    (typeof klassen)[number][]
-  >([...klassen]);
-
   const [gradFilter, setGradFilter] = useState({ min: 0, max: 9 });
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
-    beschreibung: false,
-  });
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
   const table = useReactTable({
     data,
@@ -83,135 +76,53 @@ export function SpellTable<TData, TValue>({
 
   return (
     <>
-      <div className="flex items-center gap-4">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild className="italic">
-            <Button variant="outline">Spalten auswählen</Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="start">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
-      <div className="flex items-center gap-8 py-4">
-        <div className="title">
-          <strong>Filter: </strong>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-4 py-4">
+          <div className="title">
+            <strong>Filter: </strong>
+          </div>
+          <Input
+            className="max-w-sm"
+            placeholder="Zauber finden..."
+            value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+            onChange={(event) => {
+              table.getColumn("name")?.setFilterValue(event.target.value);
+            }}
+          />
+          <CategoryFilterDropdownMenu
+            table={table}
+            columnId={"schule"}
+            name="Schule"
+            categories={schulen}
+          />
+          <CategoryFilterDropdownMenu
+            table={table}
+            columnId={"klassen"}
+            name="Klassen"
+            categories={klassen}
+          />
+
+          <Label htmlFor="gradFilter">Grad: </Label>
+          <DualRangeSlider
+            id="gradFilter"
+            className="w-40 lg:w-60 pt-8"
+            min={0}
+            max={9}
+            step={1}
+            label={(value) => value}
+            labelPosition="top"
+            defaultValue={[0, 9]}
+            value={[gradFilter.min, gradFilter.max]}
+            onValueChange={(value) => {
+              const [a, b] = value;
+              const [min, max] = [Math.min(a, b), Math.max(a, b)];
+              setGradFilter({ min, max });
+              table.getColumn("grad")?.setFilterValue({ min, max });
+            }}
+          />
         </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline">Schulen</Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="start">
-            <DropdownMenuCheckboxItem
-              checked={
-                schuleFilter.length === schulen.length
-                  ? true
-                  : schuleFilter.length === 0
-                    ? false
-                    : "indeterminate"
-              }
-              onCheckedChange={(checked) => {
-                const data = checked ? [...schulen] : [];
-                setSchuleFilter(data);
-                table.getColumn("schule")?.setFilterValue(data);
-              }}
-            >
-              Alle
-            </DropdownMenuCheckboxItem>
-            <DropdownMenuSeparator />
 
-            {schulen.map((schule, idx) => (
-              <DropdownMenuCheckboxItem
-                key={idx}
-                checked={schuleFilter.includes(schule)}
-                onCheckedChange={(value) => {
-                  if (value) {
-                    setSchuleFilter([...schuleFilter, schule]);
-                    table
-                      .getColumn("schule")
-                      ?.setFilterValue([...schuleFilter, schule]);
-                  } else {
-                    const x = schuleFilter.filter((s) => s != schule);
-                    setSchuleFilter(x);
-                    table.getColumn("schule")?.setFilterValue(x);
-                  }
-                }}
-              >
-                {schule}
-              </DropdownMenuCheckboxItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline">Klassen</Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="start">
-            {klassen.map((klasse, idx) => (
-              <DropdownMenuCheckboxItem
-                key={idx}
-                checked={klassenFilter.includes(klasse)}
-                onCheckedChange={(value) => {
-                  if (value) {
-                    setKlassenFilter([...klassenFilter, klasse]);
-                    table
-                      .getColumn("schule")
-                      ?.setFilterValue([...klassenFilter, klasse]);
-                  } else {
-                    const x = klassenFilter.filter((s) => s != klasse);
-                    setKlassenFilter(x);
-                    table.getColumn("klassen")?.setFilterValue(x);
-                  }
-                }}
-              >
-                {klasse}
-              </DropdownMenuCheckboxItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-
-        <DualRangeSlider
-          min={0}
-          max={9}
-          step={1}
-          label={(value) => value}
-          labelPosition="top"
-          defaultValue={[0, 9]}
-          value={[gradFilter.min, gradFilter.max]}
-          onValueChange={(value) => {
-            const [a, b] = value;
-            const [min, max] = [Math.min(a, b), Math.max(a, b)];
-            setGradFilter({ min, max });
-            table.getColumn("grad")?.setFilterValue({ min, max });
-          }}
-          className="w-40 pt-8"
-        />
-      </div>
-      <div className="flex items-end gap-4">
-        <Input
-          className="max-w-sm"
-          placeholder="Zauber finden..."
-          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-          onChange={(event) => {
-            table.getColumn("name")?.setFilterValue(event.target.value);
-          }}
-        />
+        <ColumnSelectionDropdown table={table} label="Spalten auswählen" />
       </div>
       <div className="rounded-md border">
         <TableRoot>
@@ -283,9 +194,11 @@ export function SpellTable<TData, TValue>({
           !(table.getIsSomeRowsSelected() || table.getIsAllRowsSelected())
         }
         onClick={() => {
-          const selected_rows = table.getSelectedRowModel().rows.map((row) => {
-            return row.getValue("name");
-          });
+          const selected_rows = table
+            .getFilteredSelectedRowModel()
+            .rows.map((row) => {
+              return row.getValue("name");
+            });
           const x = btoa(JSON.stringify(selected_rows));
           router.push(`/export/${x}`);
         }}
@@ -314,7 +227,7 @@ function CategoryFilterDropdownMenu<TData>({
   ]);
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">{name}</Button>
       </DropdownMenuTrigger>
@@ -327,6 +240,11 @@ function CategoryFilterDropdownMenu<TData>({
                 ? false
                 : "indeterminate"
           }
+          onCheckedChange={(checked) => {
+            const data = checked ? [...categories] : [];
+            setFilter(data);
+            table.getColumn(columnId)?.setFilterValue(data);
+          }}
         >
           Alle
         </DropdownMenuCheckboxItem>
@@ -347,6 +265,40 @@ function CategoryFilterDropdownMenu<TData>({
           </DropdownMenuCheckboxItem>
         ))}
       </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
+type ColumnSelectionDropdownProps<TData> = {
+  label: string;
+  table: Table<TData>;
+};
+function ColumnSelectionDropdown<TData>({
+  table,
+  label,
+}: ColumnSelectionDropdownProps<TData>) {
+  return (
+    <DropdownMenu modal={false}>
+      <DropdownMenuTrigger asChild className="italic">
+        <Button variant="outline">{label}</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start">
+        {table
+          .getAllColumns()
+          .filter((column) => column.getCanHide())
+          .map((column) => {
+            return (
+              <DropdownMenuCheckboxItem
+                key={column.id}
+                className="capitalize"
+                checked={column.getIsVisible()}
+                onCheckedChange={(value) => column.toggleVisibility(!!value)}
+              >
+                {column.id}
+              </DropdownMenuCheckboxItem>
+            );
+          })}
+      </DropdownMenuContent>{" "}
     </DropdownMenu>
   );
 }

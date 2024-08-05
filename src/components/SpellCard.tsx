@@ -1,15 +1,34 @@
 import { Spell } from "@/schemas/Spell";
 import { formatComponents } from "@/utils/formatComponents";
-import { ComponentProps } from "react";
+import Markdown from "react-markdown";
+import { cn } from "@/lib/utils";
 
 type SpellCardProps = {
   spell: Spell;
-} & ComponentProps<"div">;
+  variant?: "fixed" | "variable";
+};
 
-export function SpellCard({ spell }: SpellCardProps) {
+export function SpellCard({ spell, variant = "variable" }: SpellCardProps) {
+  // DIN-A6
+  const widthFixed = 148; // mm
+  const heightFixed = 105; // mm
+
+  const description = spell.beschreibung.join("\n\n");
+
   return (
-    <div className="p-5 bg-yellow-100 text-black rounded-sm">
-      <div className="text-2xl uppercase">{spell.name}</div>
+    <div
+      className={cn(
+        "p-5 bg-parchment text-black rounded-sm ",
+        "break-inside-avoid",
+        // variant === "fixed" && `h-[${heightFixed}mm] w-[${widthFixed}mm]`,
+      )}
+    >
+      <div
+        className="text-2xl font-heading text-heading print:text-lg"
+        style={{ fontVariantCaps: "small-caps" }}
+      >
+        {spell.name}
+      </div>
       <span className="italic">
         {spell.schule} des {spell.grad}. Grades
       </span>
@@ -31,7 +50,9 @@ export function SpellCard({ spell }: SpellCardProps) {
           {spell.wirkungsdauer}
         </li>
       </ul>
-      <div dangerouslySetInnerHTML={{ __html: spell.beschreibung_HTML }}></div>
+      <div>
+        <Markdown>{description}</Markdown>
+      </div>
     </div>
   );
 }
