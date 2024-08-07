@@ -96,6 +96,10 @@ export const columns: ColumnDef<Spell>[] = [
     accessorKey: "klassen",
     header: sortingHeader("Klassen"),
     filterFn: categoryFilter(klassen),
+    cell: ({ getValue }) => {
+      const value = getValue();
+      return Array.isArray(value) ? value.join(", ") : "";
+    },
   },
   {
     accessorKey: "zeitaufwand",
