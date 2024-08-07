@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const klassen = [
+  "Barde",
   "Kleriker",
   "Druide",
   "Paladin",
