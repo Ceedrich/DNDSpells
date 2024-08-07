@@ -2,7 +2,6 @@
 
 import { ColumnDef, HeaderContext, Row } from "@tanstack/react-table";
 import { ArrowUpDown, Info } from "lucide-react";
-import Markdown from "react-markdown";
 
 import { klassen, schulen, type Spell } from "@/schemas/Spell";
 import { Button } from "../ui/button";
@@ -15,6 +14,7 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Markdown } from "../Markdown";
 
 const sortingHeader = (header: string) =>
   function Header({ column }: HeaderContext<Spell, unknown>) {

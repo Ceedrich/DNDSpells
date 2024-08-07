@@ -1,7 +1,7 @@
 import { Spell } from "@/schemas/Spell";
 import { formatComponents } from "@/utils/formatComponents";
-import Markdown from "react-markdown";
 import { cn } from "@/lib/utils";
+import { Markdown } from "./Markdown";
 
 type SpellCardProps = {
   spell: Spell;
