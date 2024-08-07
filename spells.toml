@@ -403,3 +403,179 @@ beschreibung = [
   "Eine Kreatur, die unsichtbare Gegenstände sehen kann, nimmt den Sensor als leuchtende Kugel von der Größe einer Faust wahr.",
   "Anstatt eine Kreatur als Ziel zu bestimmen, kannst du auch einen Ort wählen, den du schon einmal gesehen hast. In diesem Fall erscheint der Sensor an dem entsprechenden Ort und bewegt sich nicht.",
 ]
+
+[[zauber]]
+name = "Befehl"
+schule = "Verzauberung"
+grad = 1
+zeitaufwand = "1 Aktion"
+reichweite = "18m"
+klassen = [] # TODO 
+verbal = true
+wirkungsdauer = "1 Runde"
+beschreibung = [
+  "Du gibst einer Kreatur in Reichweite, die du sehen kannst, einen Befehl, bei dem es sich nur um ein einzelnes Wort handeln darf. Dem Ziel muss ein Weisheitsrettungswurf gelingen, sonst muss es den Befehl in seinem nächsten Zug befolgen. Der Zauber hat keine Auswirkungen, wenn das Ziel untot ist, es deine Sprache nicht versteht oder das Ausführen deines Befehls ihm unmittelbar schaden würde.",
+  "Es folgen einige typische Befehle und ihre Auswirkungen. Entscheidest du dich für einen anderen Befehl als die hier beschriebenen, bestimmt der SL, wie sich das Ziel verhält. Wenn das Ziel deinem Befehl nicht folgen kann, endet der Zauber.",
+  "**Komm:** Das Ziel bewegt sich auf dem kürzesten und direktesten Weg auf dich zu und beendet seinen Zug, wenn es sich dir auf 1,50 m genähert hat.",
+  "**Fallenlassen:** Das Ziel lässt fallen, was es in den Händen hält, und beendet dann seinen Zug.",
+  "**Flieh:** Das Ziel verbringt seinen Zug damit, sich schnellstmöglich von dir wegzubewegen.",
+  "**Kriech:** Das Ziel erhält den Zustand liegend und beendet seinen Zug.",
+  "**Stopp:** Das Ziel bewegt sich nicht und führt keine Aktion aus. Eine fliegende Kreatur verbleibt schwebend an Ort und Stelle, wenn sie dazu imstande ist. Muss sie sich bewegen, um in der Luft zu bleiben, fliegt sie die Mindestentfernung, die notwendig ist, um nicht abzustürzen.",
+  "**Auf höheren Graden:** Wenn du diesenSpruch mit einem Zauberplatz des 2. oder eines höheren Grades wirkst, kannst du für jeden Grad über den 1. hinaus eine zusätzliche Kreatur als Ziel wählen. Die Kreaturen dürfen nicht weiter als 9m voneinander entfernt sein, wenn du den Zauber auf sie wirkst.",
+]
+
+
+[[zauber]]
+name = "Beistand"
+schule = "Bannmagie"
+grad = 2
+zeitaufwand = "1 Aktion"
+reichweite = "9m"
+verbal = true
+gestik = true
+material = "ein winziger Stoffstreifen"
+wirkungsdauer = "8 Stunden"
+klassen = [] # TODO 
+beschreibung = [
+  "Dein Zauber stärkt die Entschlossenheit und Zähigkeit deiner Verbündeten. Wähle bis zu drei Kreaturen in Reichweite. Die maximalen und aktuellen Trefferpunkte aller Ziele steigen für die Wirkungsdauer um 5.",
+  "**Auf höheren Graden:** Wenn du diesen Spruch mit einem Zauberplatz des 3. oder eines höheren Grades wirkst, steigen die Trefferpunkte des Ziels zusätzlich um 5 für jeden Grad über den 2. hinaus.",
+]
+
+[[zauber]]
+name = "Bewegungsfreiheit"
+schule = "Bannmagie"
+grad = 4
+zeitaufwand = "1 Aktion"
+reichweite = "Berührung"
+verbal = true
+gestik = true
+material = "ein Lederriemen, gebunden um einen Arm oder eine ähnliche Gliedmasse"
+wirkungsdauer = "1 Stunde"
+klassen = [] # TODO 
+beschreibung = [
+  "Du berührst eine bereitwillige Kreatur. Für die Wirkungsdauer ist die Bewegung des Ziels nicht durch schwieriges Gelände eingeschränkt, außerdem können Zauber und andere magische Effekte weder die Bewegungsrate der Kreatur verringern noch dafür sorgen, dass sie gelähmt oder festgesetzt wird. Zusätzlich kann das Ziel 1,50 m Bewegungsrate aufwenden, um automatisch aus nicht-magischen Behinderungen zu entkommen, wie Handschellen oder einer Kreatur, die sie festhält. Zu guter Letzt erleiden Bewegung und Angriffe des Ziels keine Abzüge, wenn es sich unter Wasser aufhält.",
+]
+
+
+[[zauber]]
+name = "Bigbys Hand"
+schule = "Hervorrufung"
+grad = 5
+zeitaufwand = "1 Aktion"
+reichweite = "36m"
+verbal = true
+gestik = true
+material = "eine Eierschale und ein Handschuh aus Schlangenleder"
+konzentration = true
+wirkungsdauer = "bis zu 1 Minute"
+klassen = [] # TODO 
+beschreibung = [
+  "Du erschaffst eine große Hand aus schimmernder, durchsichtiger Energie in einem freien Bereich, der sich in Reichweite befindet und den du sehen kannst. Die Hand bleibt für die Wirkungsdauer des Zaubers bestehen und bewegt sich auf deinen Befehl hin. Sie ahmt die Bewegungen deiner eigenen Hand nach.",
+  "Die Hand ist ein Gegenstand mit RK 20 und Trefferpunkten in Höhe deiner maximalen Trefferpunkte. Wird sie auf 0 Trefferpunkte reduziert, endet der Zauber: Sie besitzt eine Stärke von 26 (+8) und eine Geschicklichkeit von 10 (+0). Der Bereich, in dem Sich die Hand befindet, gilt nicht als von ihr besetzt. In deinen folgenden Zügen kannst du die Hand als Bonusaktion bis zu 18 m weit bewegen und dann einen der folgenden Effekte auslösen.",
+  "**Geschlossene Faust:** Die Hand schlägt eine Kreatur oder einen Gegenstand innerhalb von 1,50m um sich. Führe einen Nahkampf-Zauberangriff durch, der deine Spielwerte verwendet. Bei einem Treffer erleidet das Ziel 4W8 Energieschaden.",
+  "**Kraftvolle Hand:** Die Hand versucht, eine Kreatur im Umkreis von 1,50m um sich in eine Richtung deiner Wahl zu schieben. Führe einen Wettstreit zwischen der Hand und dem Ziel durch: Lege für die Hand einen Stärkewurf ab gegen den Wurf auf Stärke (Athletik) des Ziels. Ist die Größenkategorie des Ziels mittelgross oder kleiner, bist du bei diesem Wurf im Vorteil. Wenn du erfolgreich bist, schiebt die Hand das Ziel bis zu 1,50m + 1,50m mal dem Modifikator deines zum Zaubern relevanten Attributs. Die Hand bewegt sich mit dem Ziel und bleibt im Abstand von 1,50m zu ihm.",
+  "**Greifende Hand:** Die Hand versucht, eine Kreatur der Größenkategorie riesig oder kleiner im Umkreis von 1,50m um sich zu greifen. Lege einen Ringenwurf ab (siehe Kapitel 9 \"Kampf\"), wobei du den Stärkewert der Hand verwendest. Ist das Ziel mittelgroß oder kleiner, bist du bei diesem Wurf im Vorteil. Hat die Hand das Ziel ergriffen, kannst du eine Bonusaktion verwenden, damit sie es zerdrückt. Das Ziel erleidet Wuchtschaden in Höhe von 2W6 + dem Modifikator deines zum Zaubern relevanten Attributs.",
+  "**Blockierende Hand:** Die Hand platziert sich zwischen dir und einer Kreatur deiner Wahl, bis du ihr einen anderen Befehl gibst. Um diese Position beizubehalten, bewegt sich die Hand, und gewährt dir so Teildeckung gegen das Ziel. Dieses kann sich nicht durch den Bereich der Hand bewegen, wenn sein Stärkewert dem der Hand entspricht oder niedriger ist. Ist der Stärkewert des Ziels höher, kann es sich durch den Bereich der Hand bewegen, behandelt diesen aber als schwieriges Gelände.",
+  "**Auf höheren Graden:** Wenn du diesen Spruch mit einem Zauberplatz des 6. oder eines höheren Grades wirkst, steigt der Schaden der geschlossenen Faust um 2W8 und der Schaden der greifenden Hand um 2W6 für jeden Grad über den 5. hinaus.",
+]
+
+
+[[zauber]]
+name = "Bindung der Ebenen"
+schule = "Bannmagie"
+grad = 5
+zeitaufwand = "1 Stunde"
+reichweite = "18m"
+verbal = true
+gestik = true
+material = "ein Edelstein im Wert von mindestens 1.000 GM, der beim Wirken des Zaubers verbraucht wird"
+wirkungsdauer = "24 Stunden"
+klassen = [] # TODO 
+beschreibung = [
+  "Mit diesem Zauber versuchst du, ein celestisches Wesen, ein Elementar, eine Fee oder einen Unhold für einen Dienst zu binden. Die Kreatur muss für die gesamte Wirkungsdauer des Zaubers in Reichweite sein. (Für gewöhnlich wird die Kreatur erst in die Mitte eines umgekehrten *Schutzkreises* beschworen, damit sie gefangen ist, während dieser Zauber gewirkt wird.) Ist der Zauber vollendet, muss das Ziel einen Charismarettungswurf ablegen. Bei einem Misserfolg wird die Kreatur für die Wirkungsdauer an dich gebunden. Wurde die Kreatur durch einen anderen Zauber beschworen, verlängert sich dessen Wirkungsdauer auf die Wirkungsdauer von *Bindung der Ebenen*.",
+  "Eine gebundene Kreatur muss nach bestem Können deine Anweisungen erfüllen. Du könntest ihr etwa befehlen, dich auf ein Abenteuer zu begleiten, einen Ort zu beschützen oder eine Botschaft zu übermitteln. Die Kreatur befolgt den Wortlaut deiner Anweisungen. Sollte sie dir gegenüber jedoch feindlich eingestellt sein, versucht sie, deine Worte zu verdrehen, damit sie ihre eigenen Ziele verfolgen kann. Führt die Kreatur deine Anweisungen vollständig aus, ehe der Zauber endet, kehrt sie zu dir zurück, um dies zu berichten, wenn du dich auf derselben Existenzebene befindest. Andernfalls kehrt sie an den Ort zurück, wo du sie gebunden hast, und wartet dort, bis der Zauber endet.",
+  "**Auf höheren Graden:** Wenn du diesen Spruch mit einem Zauberplatz eines höheren Grades wirkst, verlängert sich die Wirkungsdauer: auf 10 Tage bei einem Zauberplatz des 6. Grades, auf 30 Tage bei einem des 7. Grades, auf 180 Tage bei einem des 8. Grades und auf 1 Jahr und 1 Tag bei einem des 9. Grades.",
+]
+
+[[zauber]]
+name = "Blendendes Niederstrecken"
+schule = "Hervorrufung"
+grad = 3
+zeitaufwand = "1 Bonusaktion"
+reichweite = "selbst"
+verbal = true
+konzentration = true
+wirkungsdauer = "bis zu 1 Minute"
+klassen = [] # TODO 
+beschreibung = [
+  "Das nächste Mal, wenn du innerhalb der Wirkungsdauer des Zaubers eine Kreatur mit einer Nahkampfwaffe triffst, lodert deine Waffe in hellem Licht auf und verursacht beim Ziel zusätzlich 3W8 gleißenden Schaden. Außerdem muss ihm ein Konstitutionsrettungswurf gelingen, um nicht für die Wirkungsdauer zu erblinden.",
+  "Eine Kreatur, die durch diesen Zauber geblendet wurde, darf am Ende jedes ihrer Züge einen weiteren Konstitutionsrettungswurf ablegen. Bei einem Erfolg verliert sie den Zustand blind.",
+]
+
+[[zauber]]
+name = "Blindheit/Taubheit"
+schule = "Nekromantie"
+grad = 2
+zeitaufwand = "1 Aktion"
+reichweite = "9m"
+verbal = true
+wirkungsdauer = "1 Minute"
+klassen = [] # TODO 
+beschreibung = [
+  "Du kannst einen Feind blind oder taub werden lassen. Wähle eine Kreatur in Reichweite, die du sehen kannst. Sie muss einen Konstitutionsrettungswurf ablegen. Wenn dieser misslingt, ist das Ziel für die Wirkungsdauer entweder blind oder taub (deine Wahl). Am Ende eines jeden seiner Züge kann das Ziel einen Konstitutionsrettungswurf ablegen. Bei Erfolg endet der Zauber.",
+  "**Auf höheren Graden:** Wenn du diesen Spruch mit einem Zauberplatz des 3. oder eines höheren Grades wirkst, kannst du für jeden Grad über den 2. hinaus eine zusätzliche Kreatur als Ziel wählen.",
+]
+
+[[zauber]]
+name = "Blitz"
+schule = "Hervorrufung"
+grad = 3
+zeitaufwand = "1 Aktion"
+reichweite = "selbst (Linie von 30m)"
+verbal = true
+gestik = true
+material = "ein Stück Fell und ein Stab aus Bernstein, Kristall oder Glas"
+wirkungsdauer = "unmittelbar"
+klassen = [] # TODO 
+beschreibung = [
+  "Ein Blitz in Gestalt einer Linie mit 30m Länge und 1,50m Breite bricht in eine Richtung deiner Wahl aus dir hervor. Jede Kreatur innerhalb der Linie muss einen Geschicklichkeitsrettungswurf ablegen. Bei einem Misserfolg erleidet das Ziel 8W6 Blitzschaden oder halb so viel Schaden bei einem erfolgreichen Rettungswurf.",
+  "Der Blitz entzündet alle brennbaren Gegenstände im Wirkungsbereich, die nicht getragen oder in der Hand gehalten werden.",
+  "**Auf höheren Graden:** Wenn du diesen Spruch mit einem Zauberplatz des 4. oder eines höheren Grades wirkst, steigt der Schaden für jeden Grad über den 3. hinaus um 1W6.",
+]
+
+
+[[zauber]]
+name = "Blitze herbeirufen"
+schule = "Beschwörung"
+grad = 3
+zeitaufwand = "1 Aktion"
+reichweite = "36m"
+verbal = true
+gestik = true
+konzentration = true
+wirkungsdauer = "bis zu 10 Minuten"
+klassen = [] # TODO 
+beschreibung = [
+  "Du erschaffst eine Sturmwolke in Form eines Zylinders, der 3m hoch ist und einen Radius von 18m besitzt, zentriert um einen Punkt in Reichweite. Der Zauber misslingt, wenn du keinen Punkt in der Luft sehen kannst, an dem die Sturmwolke erscheinen Könnte (wenn du beispielsweise in einem Raum bist, der die Wolke nicht aufnehmen kann).",
+  "Wirkst du den Zauber, wähle einen Punkt unterhalb der Wolke den du sehen kannst. Ein Blitz fährt von der Wolke herab und schlägt in diesen ein. Jede Kreatur im Umkreis von 1,50m um den Punkt muss einen Geschicklichkeitsrettungswurf ablegen. Bei einem Misserfolg erleidet das Ziel 3W10 Blitzschaden oder halb so viel Schaden bei einem erfolgreichen Rettungswurf. In jedem deiner Züge, bis der Zauber endet, kannst du deine Aktion verwenden, um auf diese Weise einen weiteren Blitz zu beschwören, der entweder in denselben oder einen anderen Punkt einschlägt.",
+  "Wenn du dich draußen aufhältst und ein Sturm herrscht, während du den Zauber wirkst, verleiht dieser dir die Kontrolle über den bestehenden Sturm und erschafft keinen eigenen. In diesem Fall steigt der Schaden des Zaubers um 1W10.",
+  "**Auf höheren Graden:** Wenn du diesen Spruch mit einem Zauberplatz des 4. oder eines höheren Grades wirkst, steigt der Schaden für jeden Grad über den 3. hinaus um 1W10.",
+]
+
+
+[[zauber]]
+name = "Blitzpfeil"
+schule = "Nekromantie"
+grad = 6
+zeitaufwand = "1 Aktion"
+reichweite = "selbst"
+verbal = true
+gestik = true
+konzentration = true
+wirkungsdauer = "bis zu 1 Minute"
+klassen = [] # TODO 
+beschreibung = [
+  "Das nächste Mal, wenn du innerhalb der Wirkungsdauer des Zaubers eine Kreatur mit einer Fernkampfwaffe angreifst, verwandelt sich das Geschoss oder die Waffe selbst (im Falle einer Wurfwaffe) in einen Blitz. Führe einen normalen Angriffswurf aus. Das Ziel erleidet bei einem Treffer 4W8 Blitzschaden oder halb so viel Schaden, wenn du verfehlst. Dies ersetzt den Waffenschaden.",
+  "Gleichgültig ob du triffst oder verfehlst, muss jede Kreatur innerhalb von 3m um das Ziel einen Geschicklichkeitsrettungs wurf ablegen. Bei einem Misserfolg erleidet die entsprechende Kreatur 2W8 Blitzschaden oder halb so viel Schaden bei einem erfolgreichen Rettungswurf. Das Geschoss oder die Waffe nimmt anschließend wieder seine ursprüngliche Form an.",
+  "**Auf höheren Graden:** Wenn du diesen Spruch mit einem Zauberplatz des 4. oder eines höheren Grades wirkst, steigt der Schaden beider Zaubereffekte für jeden Grad über den 3. hinaus um 1W8.",
+]
